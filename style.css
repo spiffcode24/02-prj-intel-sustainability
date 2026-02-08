@@ -1,1 +1,246 @@
 /* Add your CSS here */
+
+/* Body background off-white color */
+body {
+  background-color: #3a83be6e;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles with gradient background */
+header {
+  /* Gradient from blue to white, shifted left for better text visibility */
+  background: linear-gradient(to right, #0071c5 0%, #0071c5 50%, white 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Resize Intel logo to fit screen */
+header img {
+  max-width: 200px;
+  height: fit-content;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Center the main title and use Arial font */
+h1 {
+  text-align: center;
+  font-family: Arial;
+  font-size: 48px;
+  color: rgba(1, 20, 27, 0.555);
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Paragraph text uses Arial font */
+p {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Header paragraph styling */
+header p {
+  color: rgb(44, 43, 43);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Timeline card boxes */
+section div {
+  /* Box styling for each card */
+  border: 1px solid #096fcfa4;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 70px;
+  
+  
+  /* Gradient background for cards */
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+  /* Make cards narrower to fit pictures */
+  max-width: 300px;
+  
+  /* Position relative for absolute positioning of text */
+  position: relative;
+  pointer-events: auto;
+  
+  /* Smooth transition when hovering */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Stagger cards like bricks - odd cards align left */
+section div:nth-child(odd) {
+  margin-left: 50px;
+}
+
+/* Even cards align right for offset effect */
+section div:nth-child(even) {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+/* Card hover effect */
+section div:hover {
+  /* Lift the card and add stronger shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  
+  /* 50% opaque baby blue background on hover */
+  background: rgba(137, 207, 240, 0.5);
+}
+
+/* Make image more visible on hover */
+section div:hover img {
+  opacity: 0.4;
+}
+
+/* Center the h2 year text in cards and use Arial */
+section div h2 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  z-index: 3;
+  margin: 0 0 10px 0;
+}
+
+/* Style h3 heading for better visibility */
+section div h3 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 18px;
+  padding: 60px;
+  margin: -20px 0 10px 0;
+}
+
+/* Style images in cards - hidden by default */
+section div img {
+  /* Initially hidden - will show in popup */
+  display: none;
+}
+
+/* Hide h3 and p text in cards initially */
+section div h3,
+section div p {
+  /* Position text to the right of the card in popup */
+  position: absolute;
+  left: 420px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  box-sizing: border-box;
+  
+  /* Hide initially and shift left */
+  opacity: 0;
+  transform: translateX(-20px);
+  
+  /* Smooth ease-in-out transition */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style images to show in popup */
+section div img {
+  display: block;
+  position: absolute;
+  left: 420px;
+  width: 280px;
+  height: 180px;
+  object-fit: fill;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  
+  /* Make image opaque with reduced opacity for text visibility */
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Position h3 at top */
+section div h3 {
+  top: 20px;
+}
+
+/* Position p below image */
+section div p {
+  top: 200px;
+  text-align: left;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 40px 0 0 0;
+}
+
+/* Show h3, p and image when hovering over card */
+section div:hover h3,
+section div:hover p,
+section div:hover img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Cards 1971, 1985, 2020, 2023 - position popup to the left */
+/* 1971 is card 2, 1985 is card 4, 2020 is card 6, 2023 is card 8 */
+section div:nth-child(2) h3,
+section div:nth-child(2) p,
+section div:nth-child(2) img,
+section div:nth-child(4) h3,
+section div:nth-child(4) p,
+section div:nth-child(4) img,
+section div:nth-child(6) h3,
+section div:nth-child(6) p,
+section div:nth-child(6) img,
+section div:nth-child(8) h3,
+section div:nth-child(8) p,
+section div:nth-child(8) img {
+  /* Position popup to the left instead of right */
+  left: auto;
+  right: 420px;
+  
+  /* Shift from right when hovering */
+  transform: translateX(20px);
+}
+
+/* Show left-side popup when hovering */
+section div:nth-child(2):hover h3,
+section div:nth-child(2):hover p,
+section div:nth-child(2):hover img,
+section div:nth-child(4):hover h3,
+section div:nth-child(4):hover p,
+section div:nth-child(4):hover img,
+section div:nth-child(6):hover h3,
+section div:nth-child(6):hover p,
+section div:nth-child(6):hover img,
+section div:nth-child(8):hover h3,
+section div:nth-child(8):hover p,
+section div:nth-child(8):hover img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (min-width: 428px) and (max-width: 900px) {
+  /* For smaller screens, make cards full width and stack vertically */
+  section div {
+    margin: 20px auto;
+    max-width: 90%;
+  }
+  
+  /* Position popups below cards on small screens */
+  section div h3,
+  section div p,
+  section div img {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    transform: translateX(0);
+    opacity: 1;
+    margin-top: 15px;
+  }
+}
